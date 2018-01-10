@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Surykatki - Lista wyników{% endblock %}
+
+{% block content %}
+
+<style>
+	.figure-caption { font-weight: bold; }
+	.caption-before { color: purple; }
+	.caption-after { color: blue; }
+	.row { padding: 0 15px; }
+	.figure { margin-bottom: 0px; }
+	
+	.image-hr {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-top: 3px solid orange;
+    	box-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+	}
+	
+	.figure-caption {
+		letter-spacing: 0px;
+		font-size: 12px;
+	}
+	
+	@media (min-width: 576px) {
+		.figure-caption {
+			letter-spacing: 1px;
+			font-size: 16px;
+		}
+	}
+	
+</style>
+
+<div>
+
+    <h2>Archiwalna lista wyników</h2>
+    
+	<br>
+	
+	<div class="container">
+	
+	{% for file in files %}
+		
+		<div class="row align-items-center">
+			<div class="col-sm-5 text-right">
+				<figure class="figure">
+					<figcaption class="figure-caption text-center caption-before">Przesłany obrazek</figcaption>
+					<a href="/media/before/{{ file }}" data-uk-lightbox>
+						<img class="figure-img img-fluid rounded" src="/media/before/{{ file }}">
+					</a>
+				</figure>
+			</div>
+			<div class="col-sm-2 text-center">
+				<img class="d-none d-sm-inline-block" src="/static/img/arrow-right.png">
+				<img class="d-sm-none" src="/static/img/arrow-down.png" style="max-height: 50px; margin-bottom: 5px;">
+			</div>
+			<div class="col-sm-5 text-left">
+				<figure class="figure">
+					<figcaption class="figure-caption text-center caption-after">Wynik analizy</figcaption>
+					<a href="/media/after/{{ file }}" data-uk-lightbox>
+						<img class="figure-img img-fluid rounded" src="/media/after/{{ file }}">
+					</a>
+				</figure>
+			</div>
+		</div>
+		
+		{% if not forloop.last %}
+		<hr class="image-hr">
+		{% endif %}
+		
+	{% endfor %}
+	
+	</div>
+
+</div>
+
+<br>
+
+<div>
+    <a class="btn btn-primary" href="/">Powrót do strony głównej</a>
+</div>
+
+{% endblock %}

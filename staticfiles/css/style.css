@@ -1,0 +1,76 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+	position: relative;
+    min-height: 100%;
+
+    margin: 0;
+
+    padding-bottom: 6rem;
+
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 14px
+
+	color: black;
+	background-color: #f9f9f9;
+}
+
+p, hi, h2, h3, h4, h5, h6, a {
+	color: black;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: blue;
+}
+
+.sub-header {
+    background-color: #e6ffcc;
+    text-align: center;
+}
+
+.sub-header h1 {
+    margin: 0px;
+    padding: 20px;
+    color: #6D9C91;
+}
+
+.content {
+	padding: 20px;
+	text-align: center;
+}
+
+.sub-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: #6D9C91;
+
+    font-size: 14px;
+	text-align: center;
+	padding: 10px;
+}
+
+.sub-footer span, .sub-footer a {
+	color: white;
+}
+.sub-footer a {
+    font-weight: bold;
+}
+.sub-footer a:hover, .copyright a:active {
+    font-weight: bold;
+    color: red;
+}

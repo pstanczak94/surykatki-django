@@ -1,0 +1,7 @@
+django
+matplotlib
+numpy
+pillow
+scipy
+tensorflow
+object_detection

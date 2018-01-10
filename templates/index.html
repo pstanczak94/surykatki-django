@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript">
+function UploadSubmit() {
+	ShowLoadingOverlay('Trwa przetwarzanie obrazu...');
+}
+</script>
+
+<style>
+    #inputUploadFile { margin: auto; }
+    #inputUploadFileWrapper { padding: 20px; }
+    #btnList { margin-right: 10px; }
+</style>
+
+<h2>Wybierz obrazek do poddania analizie</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data" onsubmit="UploadSubmit()">
+    {% csrf_token %}
+
+    <div id="inputUploadFileWrapper">
+        <input id="inputUploadFile" type="file" accept="image/*" name="uploaded_file" required>
+    </div>
+
+	<a id="btnList" class="btn btn-primary" href="/list">Lista wyników</a>
+	
+    <input id="btnSubmit" class="btn btn-success" type="submit" value="Wczytaj obrazek">
+
+</form>
+
+{% endblock %}

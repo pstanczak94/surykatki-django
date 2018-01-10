@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Surykatki - Wynik detekcji{% endblock %}
+
+{% block content %}
+
+<style>
+	.no-error-msg {
+		font-weight: bold;
+		color: green;
+	}
+	.error-msg {
+		font-weight: bold;
+		color: red;
+	}
+</style>
+
+<div>
+{% if success %}
+
+    <h2 class="no-error-msg">Poprawnie przeanalizowano obrazek</h2>
+
+	<h4>Wynik detekcji:</h4>
+	
+    <img class="img-fluid center-block" src="{{ imageAfter }}" alt="Wynik detekcji">
+    
+{% else %}
+
+	<h2>Wystąpił błąd...</h2>
+	<br>
+	
+    <h4 class="error-msg">{{ error_msg }}</h4>
+    
+{% endif %}
+</div>
+
+<br>
+
+<div>
+    <a class="btn btn-primary" href="/">Powrót do strony głównej</a>
+</div>
+
+{% endblock %}
